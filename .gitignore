@@ -5,6 +5,7 @@ __pycache__/
 
 #REMOVE
 *db
+arquivos_ui/
 
 # C extensions
 *.so

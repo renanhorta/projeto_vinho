@@ -152,7 +152,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_menu">
      <widget class="QWidget" name="verticalLayoutWidget">
@@ -361,7 +361,6 @@
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323;
@@ -397,7 +396,6 @@ font-size: 18px
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323;
@@ -727,7 +725,6 @@ font-size: 18px
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323;
@@ -896,6 +893,9 @@ font-size: 18px
              <property name="layoutDirection">
               <enum>Qt::LeftToRight</enum>
              </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="frameShadow">
               <enum>QFrame::Plain</enum>
              </property>
@@ -924,7 +924,6 @@ font-size: 18px
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323;
@@ -1117,7 +1116,6 @@ font-size: 18px
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323;
@@ -1155,7 +1153,6 @@ font-size: 18px
            </property>
            <property name="styleSheet">
             <string notr="true">QLineEdit{
-margin-botton: 15px;
 color: #F2E8C6;
 background-color: #A73121;
 font-size: 18px
@@ -1181,7 +1178,6 @@ font-size: 18px
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323
@@ -1207,7 +1203,6 @@ background-color: #952323
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323
@@ -1233,7 +1228,6 @@ background-color: #952323
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323
@@ -1259,14 +1253,13 @@ background-color: #952323
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323
 }</string>
            </property>
            <property name="text">
-            <string>Visualizar 10 Melhores Vinhos</string>
+            <string>Visualizar 10  Melhores Vinhos</string>
            </property>
           </widget>
          </item>
@@ -1297,7 +1290,6 @@ background-color: #952323
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton{
-margin-botton: 15px;
 border-radius:5px;
 color: #F2E8C6;
 background-color: #952323
@@ -1448,7 +1440,7 @@ background-color: #952323
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>C:/Users/Renan_PC/Desktop/vinho_menu__img.png</pixmap>
+       <pixmap>img_menu.webp</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1528,6 +1520,33 @@ background-color: #952323
        </item>
        <item>
         <widget class="QLineEdit" name="input_uva">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_uva_2">
+         <property name="maximumSize">
+          <size>
+           <width>5000</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Ano:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="input_ano">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -1693,6 +1712,89 @@ background-color: #952323
       </layout>
      </widget>
     </widget>
+    <widget class="QWidget" name="page_show_top_vinhos">
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>711</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <property name="topMargin">
+        <number>15</number>
+       </property>
+       <property name="rightMargin">
+        <number>15</number>
+       </property>
+       <property name="bottomMargin">
+        <number>15</number>
+       </property>
+       <item>
+        <widget class="QTableWidget" name="top_vinhos_table">
+         <property name="palette">
+          <palette>
+           <active>
+            <colorrole role="Base">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>245</red>
+               <green>245</green>
+               <blue>212</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="Base">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>245</red>
+               <green>245</green>
+               <blue>212</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="Base">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>212</red>
+               <green>212</green>
+               <blue>181</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <column>
+          <property name="text">
+           <string>Nome</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Média de Nota</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
     <widget class="QWidget" name="page_show_visualizar">
      <widget class="QWidget" name="layoutWidget_3">
       <property name="geometry">
@@ -1755,34 +1857,90 @@ background-color: #952323
            </disabled>
           </palette>
          </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
          <column>
           <property name="text">
-           <string>ID_vinho</string>
+           <string>ID</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
           </property>
          </column>
          <column>
           <property name="text">
            <string>Vinho</string>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
          </column>
          <column>
           <property name="text">
            <string>Uva</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Ano</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Nacionalidade</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
           </property>
          </column>
          <column>
           <property name="text">
            <string>Nota</string>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
          </column>
          <column>
           <property name="text">
            <string>Harmonização</string>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
          </column>
          <column>
           <property name="text">
            <string>Comentários</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
           </property>
          </column>
         </widget>
