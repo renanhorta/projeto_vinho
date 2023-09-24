@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import QtCore
 from models.crud_bd import *
+from update import Update_App
 
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import *
@@ -24,13 +25,33 @@ class Main_app(QMainWindow):
 
     self.avaliar_btn_visualizar.clicked.connect(lambda: self.Pages_menu.setCurrentWidget(self.page_avaliar))
     self.avaliar_btn_visualizar.clicked.connect(lambda: self.Pages_show.setCurrentWidget(self.page_show_avaliar))
-    
+
     #ENVIO DO VINHO NOVO PARA A TABELA
     self.btn_enviar.clicked.connect(lambda: self.enviar_vinho())
+
+    #MOSTRAR DATABASE INTEIRA (MOSTRAR TODOS OS VINHOS)
+    self.todos_vinhos_btn.clicked.connect(lambda: self.carregar_db())
 
     #REMOVER ULTIMA AVALIACAO
     self.remover_btn.clicked.connect(lambda: self.excluir_ultima_avaliacao())
 
+    #UPDATE TABLE
+    self.update_btn.clicked.connect(lambda: self.atualizar_table())
+
+  #carregar DB
+  def carregar_db(self):
+    database = session.query(Vinho).all()
+
+    self.vinho_table.setRowCount(len(database))
+    self.vinho_table.setColumnCount(6)
+
+    for i, vinho in enumerate(database):
+          self.vinho_table.setItem(i, 0, QTableWidgetItem(str(vinho.id)))
+          self.vinho_table.setItem(i, 1, QTableWidgetItem(vinho.nome))
+          self.vinho_table.setItem(i, 2, QTableWidgetItem(vinho.uva))
+          self.vinho_table.setItem(i, 3, QTableWidgetItem(vinho.nacionalidade))
+          self.vinho_table.setItem(i, 4, QTableWidgetItem(str(vinho.nota)))
+          self.vinho_table.setItem(i, 5, QTableWidgetItem(vinho.comentario))
 
   def enviar_vinho(self):
     #Vinho(nome=nome, avaliacao=avaliacao, uva=uva, armonizacao=armonizacao, nacionalidade=nacionalidade, comentario=comentario)
@@ -45,7 +66,7 @@ class Main_app(QMainWindow):
     print(self.nome_vinho,self.uva_vinho,self.nota_vinho,self.coment_vinho)
     
 
-    add_vinho(self.nome_vinho, self.nota_vinho, self.uva_vinho,self.harmo_vinho,self.pais_vinho,self.coment_vinho)
+    add_vinho(self.nome_vinho, self.nota_vinho, self.uva_vinho,self.harmo_vinho,self.pais_vinho,self.coment_vinho, None)
     self.input_nome_vinho.clear()
     self.input_uva.clear()
     self.input_nota.clear()
@@ -58,6 +79,13 @@ class Main_app(QMainWindow):
     remover_ultimo_vinho()
     
 
+  def atualizar_table(self):
+    self.update_app = Update_App()
+    self.update_app.show()
+     
+  def pesquisar_vinho(self, vinho):
+    self.vinho_pesquisado = pesquisar_vinho(vinho)
+    
 
 
 if __name__ == "__main__":

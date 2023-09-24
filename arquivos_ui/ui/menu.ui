@@ -804,6 +804,118 @@ font-size: 18px
           <number>30</number>
          </property>
          <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="title_vinho_3">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>230</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>149</red>
+                   <green>35</green>
+                   <blue>35</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Text">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>149</red>
+                   <green>35</green>
+                   <blue>35</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>149</red>
+                   <green>35</green>
+                   <blue>35</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Text">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>149</red>
+                   <green>35</green>
+                   <blue>35</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Text">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <property name="lineWidth">
+              <number>0</number>
+             </property>
+             <property name="text">
+              <string>Avaliador De Vinho</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::AutoText</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
           <widget class="QPushButton" name="avaliar_btn_visualizar">
            <property name="font">
             <font>
@@ -1128,7 +1240,7 @@ background-color: #952323
 }</string>
            </property>
            <property name="text">
-            <string>Atualizar Útima Avaliação</string>
+            <string>Atualizar Avaliação</string>
            </property>
           </widget>
          </item>
@@ -1215,7 +1327,7 @@ background-color: #952323
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_show_menu">
      <widget class="QLabel" name="title_vinho">
@@ -1565,6 +1677,14 @@ background-color: #952323
          <property name="autoFillBackground">
           <bool>false</bool>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+margin-botton: 15px;
+border-radius:5px;
+color: #F2E8C6;
+background-color: #952323
+}</string>
+         </property>
          <property name="text">
           <string>Enviar Avaliação</string>
          </property>
@@ -1597,7 +1717,7 @@ background-color: #952323
         <number>15</number>
        </property>
        <item>
-        <widget class="QTableWidget" name="tableWidget">
+        <widget class="QTableWidget" name="vinho_table">
          <property name="palette">
           <palette>
            <active>
@@ -1635,6 +1755,36 @@ background-color: #952323
            </disabled>
           </palette>
          </property>
+         <column>
+          <property name="text">
+           <string>ID_vinho</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Vinho</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Uva</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Nota</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Harmonização</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Comentários</string>
+          </property>
+         </column>
         </widget>
        </item>
       </layout>
